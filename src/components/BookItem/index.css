@@ -1,0 +1,14 @@
+.book-item-container {
+  flex: 1 1 30%;
+  text-align: center;
+  box-sizing: "border-box";
+  padding: 0 15px;
+}
+.book-image {
+  width: 200px;
+}
+.book-title {
+  font-size: 18px;
+  text-wrap: wrap;
+  font-weight: 500;
+}

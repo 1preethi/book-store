@@ -1,0 +1,30 @@
+.user-details-form-container {
+  padding: 0px 15px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
+  flex-grow: 1;
+  width: 100%;
+  background-color: white;
+}
+.user-input {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid gray;
+}
+.place-order-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.shipping-note {
+  font-size: 12px;
+}
+
+.user-details-form-heading {
+  font-size: 24px;
+  padding-top: 50px;
+}

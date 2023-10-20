@@ -1,0 +1,22 @@
+.input-container {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .input-container {
+    width: 25%;
+    align-self: flex-end;
+    margin-bottom: 30px;
+  }
+}
+
+.text-input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.search-button {
+  font-size: 20px;
+}

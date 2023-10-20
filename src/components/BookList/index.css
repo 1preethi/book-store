@@ -1,0 +1,38 @@
+.book-list-container {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 30px 0px;
+}
+
+.book-list-content-container {
+  width: 90%;
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 768px) {
+  .book-list-content-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.book-items-container {
+  text-align: center;
+  flex-basis: 80%;
+}
+
+.book-items-list-container {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-items-heading {
+  font-weight: 500;
+}
+
+.books-container{
+  display: flex;
+}

@@ -1,0 +1,38 @@
+.banner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-content-container {
+  width: 90%;
+  max-width: 1200px;
+  font-size: 18px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  width: 90%;
+  box-sizing: border-box;
+  padding-top: 30px;
+}
+
+.banner-text {
+  font-family: "Roboto";
+  font-size: 22px;
+}
+
+.explore-button {
+  padding: 14px;
+  background-color: black;
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* @media screen and (min-width: 768px) {
+  .banner-content-container {
+    padding-right: 100px;
+  }
+} */
