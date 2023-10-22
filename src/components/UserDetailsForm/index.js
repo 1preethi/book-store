@@ -83,7 +83,7 @@ class UserDetailsForm extends Component {
           onChange={this.onChangeEmailInput}
         />
         <input
-          type="tel"
+          type="number"
           placeholder="Phone"
           className="user-input"
           onChange={this.onChangePhoneInput}
