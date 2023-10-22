@@ -22,13 +22,15 @@ class App extends Component {
     }));
   };
 
+  resetCart = () => {
+    console.log("reset");
+    this.setState({ cartList: [] });
+  };
+
   deleteFromCart = (bookId) => {
-    console.log('delete')
     const updatedCartList = this.state.cartList.filter(
       (eachCartItem) => eachCartItem.isbn13 !== bookId
     );
-
-    console.log(updatedCartList)
 
     this.setState({ cartList: updatedCartList });
   };
@@ -41,6 +43,7 @@ class App extends Component {
             cartList,
             addToCart: this.addToCart,
             deleteFromCart: this.deleteFromCart,
+            resetCart: this.resetCart,
           }}
         >
           <Switch>

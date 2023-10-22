@@ -7,10 +7,6 @@ import UserDetailsForm from "../UserDetailsForm";
 class Checkout extends Component {
   state = { is_order_placed: false };
 
-  onFormSubmitSuccess = () => {
-    this.setState({ isOrderPlaced: true });
-  };
-
   renderCartItems = () => (
     <CartContext.Consumer>
       {(value) => {
@@ -55,14 +51,24 @@ class Checkout extends Component {
     </CartContext.Consumer>
   );
 
-  renderCartAndForm = () => {
-    return (
-      <>
-        {this.renderCartItems()}
-        <UserDetailsForm onFormSuccess={this.onFormSubmitSuccess} />
-      </>
-    );
-  };
+  renderCartAndForm = () => (
+    <CartContext.Consumer>
+      {(value) => {
+        const onFormSubmitSuccess = () => {
+          this.setState({ isOrderPlaced: true });
+          const { resetCart } = value;
+          resetCart();
+        };
+
+        return (
+          <>
+            {this.renderCartItems()}
+            <UserDetailsForm onFormSuccess={onFormSubmitSuccess} />
+          </>
+        );
+      }}
+    </CartContext.Consumer>
+  );
 
   renderOrderSuccessMessage = () => {
     return (

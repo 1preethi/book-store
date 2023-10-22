@@ -14,7 +14,7 @@ class UserDetailsForm extends Component {
     const { name, address, email, phone } = this.state;
     const userDetails = { name, address, email, phone };
 
-    const isValidPhone = (phone) => String(phone).length === 10;
+    const isValidPhone = (phone) => Number(phone) && phone.length === 10;
     const isNotEmpty = (value) => value.length > 0;
 
     let isValid = true;
@@ -83,7 +83,7 @@ class UserDetailsForm extends Component {
           onChange={this.onChangeEmailInput}
         />
         <input
-          type="number"
+          type="tel"
           placeholder="Phone"
           className="user-input"
           onChange={this.onChangePhoneInput}
