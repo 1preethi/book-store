@@ -26,8 +26,8 @@ const Header = () => {
       <div className="header-content-container">
         <Link to="/" className="nav-link">
           <div className="logo-container">
-            <div className="logo">C</div>
-            CROSSWORD
+            <div className="logo">B</div>
+            BOOKSTORE
           </div>
         </Link>
 
