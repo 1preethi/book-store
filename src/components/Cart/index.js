@@ -10,6 +10,8 @@ const Cart = () => (
     {(value) => {
       const { cartList } = value;
 
+      console.log(cartList, "cartList");
+
       const isCartEmpty = cartList.length === 0;
 
       const getTotalCartPrice = () => {
@@ -22,26 +24,28 @@ const Cart = () => (
       };
 
       const renderCartItems = () => {
-        <div className="cart-order-items-container">
-          <ul className="cart-list-container">
-            {cartList.map((eachcartItem) => (
-              <CartItem cartItemDetails={eachcartItem} />
-            ))}
-          </ul>
-          <div className="order-summary-container">
-            <h1 className="cart-heading order-title">Order Summary</h1>
-            <div className="order-amount-container">
-              <p className="order-amount">Amount Payable:</p>
-              <h1 className="cart-price">${getTotalCartPrice()}</h1>
+        return (
+          <div className="cart-order-items-container">
+            <ul className="cart-list-container">
+              {cartList.map((eachcartItem) => (
+                <CartItem cartItemDetails={eachcartItem} />
+              ))}
+            </ul>
+            <div className="order-summary-container">
+              <h1 className="cart-heading order-title">Order Summary</h1>
+              <div className="order-amount-container">
+                <p className="order-amount">Amount Payable:</p>
+                <h1 className="cart-price">${getTotalCartPrice()}</h1>
+              </div>
+              <p className="order-text">(inclusive of all taxes)</p>
+              <Link to="/checkout" className="nav-link">
+                <button className="checkout-button" disabled={isCartEmpty}>
+                  Proceed to Checkout
+                </button>
+              </Link>
             </div>
-            <p className="order-text">(inclusive of all taxes)</p>
-            <Link to="/checkout" className="nav-link">
-              <button className="checkout-button" disabled={isCartEmpty}>
-                Proceed to Checkout
-              </button>
-            </Link>
           </div>
-        </div>;
+        );
       };
 
       const renderCartEmptyMessage = () => {

@@ -1,9 +1,26 @@
 import { FaBook, FaShoppingBag } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
 
 import "./index.css";
 
 const Header = () => {
+  const renderCartItemsCount = () => (
+    <CartContext.Consumer>
+      {(value) => {
+        const { cartList } = value;
+        const cartItemsCount = cartList.length;
+        return (
+          <>
+            {cartItemsCount > 0 ? (
+              <span className="cart-count-badge">{cartList.length}</span>
+            ) : null}
+          </>
+        );
+      }}
+    </CartContext.Consumer>
+  );
+
   return (
     <nav className="header-container">
       <div className="header-content-container">
@@ -25,6 +42,7 @@ const Header = () => {
             <Link to="/cart" className="nav-link">
               <FaShoppingBag className="icon" />
               <span className="icon-name">Cart</span>
+              {renderCartItemsCount()}
             </Link>
           </li>
         </ul>

@@ -25,10 +25,9 @@
   margin-left: 20px;
 }
 
-.nav-link{
+.nav-link {
   text-decoration: none;
   color: black;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -59,4 +58,15 @@
 
 .nav-items-container {
   display: flex;
+}
+
+.cart-count-badge {
+  background-color: black;
+  color: white;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50%;
+  margin-left: 8px;
+  padding: 5px 6px;
 }
