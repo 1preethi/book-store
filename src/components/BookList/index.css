@@ -33,6 +33,10 @@
   font-weight: 500;
 }
 
-.books-container{
+.books-container {
   display: flex;
+}
+
+.no-items-text {
+  width: 100%;
 }

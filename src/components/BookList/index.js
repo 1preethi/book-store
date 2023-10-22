@@ -90,9 +90,13 @@ class BookList extends Component {
       <>
         <h1 className="book-items-heading">Books</h1>
         <ul className="book-items-list-container">
-          {filteredBooks.map((eachbook) => (
-            <BookItem bookItemDetails={eachbook} />
-          ))}
+          {filteredBooks.length > 0 ? (
+            filteredBooks.map((eachbook) => (
+              <BookItem bookItemDetails={eachbook} />
+            ))
+          ) : (
+            <p className="no-items-text">No Search Results Found.</p>
+          )}
         </ul>
       </>
     );
@@ -119,6 +123,7 @@ class BookList extends Component {
 
   render() {
     const { priceRangeValue, booksData } = this.state;
+
     return (
       <>
         <Header />

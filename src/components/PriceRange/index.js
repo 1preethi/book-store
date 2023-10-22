@@ -5,7 +5,6 @@ import "rc-tooltip/assets/bootstrap_white.css";
 import "./index.css";
 
 const PriceRange = (props) => {
-  console.log(props.priceRangeValue);
   const tipHandleRender = (node, handleProps) => {
     return (
       <Tooltip
@@ -25,7 +24,6 @@ const PriceRange = (props) => {
   };
 
   const getMarks = (maxPrice) => {
-    console.log(typeof maxPrice);
     const priceObj = {
       0: 0,
     };
