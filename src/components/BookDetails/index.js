@@ -71,6 +71,14 @@ class BookDetails extends Component {
           addToCart({ ...this.state.bookDetailsData });
         };
 
+        const isAddedToCart = () => {
+          const { cartList } = value;
+          return cartList.find(
+            (eachCartItem) =>
+              eachCartItem.isbn13 === this.state.bookDetailsData.isbn13
+          );
+        };
+
         return (
           <div className="book-details-container">
             <div className="book-details-content-container">
@@ -93,8 +101,9 @@ class BookDetails extends Component {
                     <button
                       className="book-details-button"
                       onClick={onClickAddToCart}
+                      disabled={isAddedToCart()}
                     >
-                      Add to Cart
+                      {isAddedToCart() ? "Added" : "Add to Cart"}
                     </button>
                   </div>
                 </div>

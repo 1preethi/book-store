@@ -59,6 +59,7 @@
   border-radius: 5px;
   border: none;
   color: black;
+  cursor: pointer;
 }
 
 .background-fill {
