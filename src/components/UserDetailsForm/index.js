@@ -6,20 +6,56 @@ class UserDetailsForm extends Component {
     name: "",
     address: "",
     email: "",
-    phone: 0,
-    isFormSubmitted: false,
+    phone: "",
+    showErrorMessage: false,
   };
 
-  onSubmitForm = (event) => {};
-  onChangeNameInput = (event) => {
-    const { value } = this.state;
-    this.setState({ });
+  isInputsValid = () => {
+    const { name, address, email, phone } = this.state;
+    const userDetails = { name, address, email, phone };
+
+    const isValidPhone = (phone) => String(phone).length === 10;
+    const isNotEmpty = (value) => value.length > 0;
+
+    let isValid = true;
+    for (const [property, value] of Object.entries(userDetails)) {
+      if (property === "phone" && !isValidPhone(value)) {
+        isValid = false;
+        break;
+      }
+
+      if (property !== "phone" && !isNotEmpty(value)) {
+        isValid = false;
+      }
+    }
+    return isValid;
   };
-  onChangeAddressInput = (event) => {};
-  onChangeEmailInput = (event) => {};
-  onChangePhoneInput = (event) => {};
+
+  onSubmitForm = (event) => {
+    const { onFormSuccess } = this.props;
+    event.preventDefault();
+    const isInputsValid = this.isInputsValid();
+    if (isInputsValid) {
+      onFormSuccess();
+    } else {
+      this.setState({ showErrorMessage: true });
+    }
+  };
+  onChangeNameInput = (event) => {
+    this.setState({ name: event.target.value });
+  };
+  onChangeAddressInput = (event) => {
+    this.setState({ address: event.target.value });
+  };
+  onChangeEmailInput = (event) => {
+    this.setState({ email: event.target.value });
+  };
+  onChangePhoneInput = (event) => {
+    this.setState({ phone: event.target.value });
+  };
 
   render() {
+    const { showErrorMessage } = this.state;
     return (
       <form
         className="user-details-form-container"
@@ -54,6 +90,9 @@ class UserDetailsForm extends Component {
         />
         <button className="place-order-button">Place Order</button>
         <p className="shipping-note">Only Cash on Delivery is Available</p>
+        {showErrorMessage && (
+          <p className="error-message">Please enter valid details</p>
+        )}
       </form>
     );
   }

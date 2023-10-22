@@ -70,5 +70,28 @@
   .cart-order-items-container {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
   }
+}
+
+.cart-empty-message-container {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-empty-message {
+  font-weight: 500;
+  font-size: 22px;
+}
+.books-button {
+  padding: 14px;
+  background-color: black;
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }

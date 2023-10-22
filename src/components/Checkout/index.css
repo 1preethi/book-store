@@ -35,7 +35,7 @@
 
 .checkout-cart-list-container {
   list-style-type: none;
-  padding-left: 0; 
+  padding-left: 0;
 }
 
 .checkout-cart-item-container {
@@ -74,4 +74,25 @@
 
 .checkout-cart-text {
   font-size: 14px;
+}
+.success-message-container {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order-success-message {
+  font-weight: 500;
+  font-size: 26px;
+}
+.home-button {
+  padding: 14px;
+  background-color: black;
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }

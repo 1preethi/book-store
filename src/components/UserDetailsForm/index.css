@@ -28,3 +28,9 @@
   font-size: 24px;
   padding-top: 50px;
 }
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 22px;
+}
