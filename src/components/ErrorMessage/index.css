@@ -1,0 +1,16 @@
+.error-message-container {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-heading {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.error-text {
+  font-size: 20px;
+}

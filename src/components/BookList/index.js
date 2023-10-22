@@ -4,6 +4,7 @@ import PriceRange from "../PriceRange";
 import SearchInput from "../SearchInput";
 import BookItem from "../BookItem";
 import LoaderContainer from "../LoaderContainer";
+import ErrorMessage from "../ErrorMessage";
 
 import "./index.css";
 
@@ -95,6 +96,10 @@ class BookList extends Component {
         </ul>
       </>
     );
+  };
+
+  renderFailureView = () => {
+    return <ErrorMessage />;
   };
 
   renderBooks = () => {
