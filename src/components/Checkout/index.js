@@ -88,8 +88,8 @@ class Checkout extends Component {
         <div className="header-without-links-container">
           <div className="header-content-container">
             <div className="logo-container">
-              <div className="logo">C</div>
-              CROSSWORD
+              <div className="logo">B</div>
+              BOOKSTORE
             </div>
           </div>
         </div>
